@@ -1,7 +1,24 @@
 extends ../auth.layout.pug
 
 block content
-  .hello-world
+  .wrapper 
+    .welcome
+      .welcome-page
+        .welcome-page__heder
+          .authorization
+            a.authorization__btn(href='#') Авторизоваться
+        .welcome-page__content
+          .user
+            .user__avatar
+              img(srs=`/assets/images/img/avatar.png`)
+            h1.user__name Карагодина Евгения
+            p.user__text 
+        .welcome-page__copyright
+
+      
+
+
+  //.hello-world
     +icon('portfolio_header', 'hello-world__block')
     .inlined-svg
     
