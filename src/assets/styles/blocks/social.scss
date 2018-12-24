@@ -1,0 +1,25 @@
+.social{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100px;
+    width: 100%;
+}
+
+.social__list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 25px;
+}
+
+.social__item{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 25px;
+    width: 35px;    
+    margin-right:  25px;  
+    
+}
+

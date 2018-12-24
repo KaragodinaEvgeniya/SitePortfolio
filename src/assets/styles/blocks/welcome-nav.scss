@@ -1,0 +1,56 @@
+.welcome-nav{
+    display: flex;
+    width: 100%;
+    border-radius: 0 0 20px 20px;
+
+}
+
+.welcome-nav__list{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    width: 100%;
+    
+    
+}
+
+.welcome-nav__item{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%; 
+    background: $green;      
+    border-right: 1px solid #ffffff;
+
+    &:first-child{
+        border-radius: 0 0 0 20px ;  
+    }   
+
+
+    &:last-child{
+        border: none;
+        border-radius: 0 0 20px;   
+    }  
+    
+    &:hover{
+        background: $darkgreen;  
+    }
+
+    &:active{        
+        box-shadow: 0 0 0 60px rgba(0,0,0,.05) inset;
+    }
+}
+
+.welcome-nav__btn{
+    display: flex;
+    @include roboto-regular;
+    text-decoration: none;    
+    height: 50px;
+    width: 100%;
+    align-items: center;
+    justify-content: center; 
+    
+    
+}

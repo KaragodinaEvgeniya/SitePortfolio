@@ -1,0 +1,21 @@
+.heder{
+    display: flex;
+    width: 100%;
+    height: 10%;
+    padding: 30px;
+}
+
+.heder__left{
+    display: flex;
+    width: 50%;
+    justify-content: right;
+    align-items: flex-start;
+}
+
+.heder__right{
+    display: flex;
+    width: 50%;
+    justify-content: flex-end;
+    align-items: center;
+}
+

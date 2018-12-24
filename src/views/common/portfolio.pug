@@ -1,0 +1,31 @@
+section.portfolio
+    .portfolio__title
+        .title.title_works
+            h1.title__text мои работы
+            .underline
+    .example
+        .example__left
+            .description
+                h3.description__text сайт школы онлайн образования
+                .underline-green
+                p.description__technology html, css, javascript
+                a.description__btn(href="#")
+                    .description__elem
+                        +icon('link','description__link')
+                    span.description__btn-text Посмотреть сайт
+        .example__right
+            .slider                                
+                +image('../images/img/school.png','','slider__pic')
+            button.btn-top
+                +image('../images/img/yoga.png','','btn-top__pic')
+                .btn-top__elem
+                    +icon('scroll','btn-top__icon')
+            button.btn-botom
+                +image('../images/img/furniture.png','','btn-botom__pic')
+                .btn-botom__elem
+                    +icon('scroll','btn-botom__icon')
+                
+
+                    
+        
+        

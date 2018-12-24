@@ -2,23 +2,33 @@ extends ../auth.layout.pug
 
 block content
   .wrapper 
-    .welcome
-      .welcome-page
-        .welcome-page__heder
-          .authorization
-            a.authorization__btn(href='#') Авторизоваться
-        .welcome-page__content
-          .user
-            .user__avatar
-              img(srs=`/assets/images/img/avatar.png`)
-            h1.user__name Карагодина Евгения
-            p.user__text 
-        .welcome-page__copyright
+    .welcome      
+      .welcome__heder
+        .authorization
+          a.authorization__btn(href='#') Авторизоваться
+      .welcome__content
+        .welcome__user
+          include ../common/user.pug
+          .welcome__social.social
+            include ../common/social.pug                      
+          nav.welcome-nav
+            ul.welcome-nav__list
+              li.welcome-nav__item
+                a.welcome-nav__btn(href='http://localhost:3000/my-works.html') Мои работы
+              li.welcome-nav__item
+                a.welcome-nav__btn(href='#') Обо мне
+              li.welcome-nav__item
+                a.welcome-nav__btn(href='#') Блог
+      .welcome__copyright.copyrigt
+        ul.copyrigt__list
+          li.copyrigt__item
+            p.copyrigt__elem © Карагодина Евгения
+          li.copyrigt__item
+            p.copyrigt__elem создано с любовью в Loftschool
+          li.copyrigt__item
+            p.copyrigt__elem 2018
 
-      
 
 
-  //.hello-world
-    +icon('portfolio_header', 'hello-world__block')
-    .inlined-svg
-    
+
+  

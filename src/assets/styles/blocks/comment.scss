@@ -1,0 +1,69 @@
+.comment{
+    display: flex;  
+    flex-flow: column;    
+    align-items: center;  
+    width: 100%;
+    height: 100vh;
+    background: url(./assets/images/img/fon.png) center center no-repeat;
+}
+
+.comment__title  {
+    display: flex;    
+    text-align: center;
+    height: 250px;
+    width: 380px;   
+    position: relative;
+    line-height:2.3;  
+}
+
+.comment-content  {
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+
+}
+
+.comment-content__list{
+    display: flex;  
+    justify-content: center;    
+    width: 50%;
+}
+.comment-content__item{
+    display: flex;
+    flex-flow: column;
+    justify-content: flex-start;
+    align-items: center;
+    @include roboto-regular;
+    width: 47%;
+    margin-right:25px;
+
+    &:last-child{
+        margin-right: 0;
+    }
+}
+.comment-content__avatar{
+    display: flex;    
+    border-radius: 50%;    
+    width: 80px;
+    height: 80px;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.comment-content__text{
+    color: #373e42;
+    font-style: italic;
+    margin-bottom: 25px;
+}
+
+.comment-content__label{
+    font-style: italic;
+    color: $darkgreen;
+}
+
+.comment-content__origin{
+    color: #373e42;
+    font-style: italic;
+}
+
+

@@ -1,0 +1,9 @@
+.scroll{
+    display: flex;    
+    width: 30px;
+    height: 15px;
+    background:svg-load('scroll.svg', fill=#ffff) center center no-repeat;
+    opacity: 0.7;
+    outline: 0;
+    
+}

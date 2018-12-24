@@ -1,0 +1,20 @@
+$tablets:768px;
+$phones:480px;
+
+$darkgreen:#4e8839;
+$green:#6c9c5a;
+$gray:#566358;
+$darkgray:#373e42;
+
+@mixin roboto-regular{
+  font-family: 'Roboto', Helvetica, sans-serif;
+    font-weight: normal;
+    color: #ffffff;
+    font-size: 16px;
+}
+
+@mixin Sansus {
+    font-family: 'Sansus Webissimo', Helvetica, sans-serif; 
+    font-weight: normal;        
+    text-transform: uppercase;
+}
