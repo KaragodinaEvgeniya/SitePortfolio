@@ -1,0 +1,22 @@
+.example{
+    display: flex;
+}
+
+.example__right{
+    width: 50%;    
+    background: #e1e4d7;   
+    display: grid;
+    grid-template-areas: "a a"
+                         "a a"
+                         "b c"
+                           
+}
+
+.example__left{
+    display: flex;
+    width: 50%;
+    justify-content: center;
+    align-items: center;
+    background:#ebefe2;     
+
+}

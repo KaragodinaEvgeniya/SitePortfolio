@@ -1,0 +1,68 @@
+.description{
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    width: 330px;
+    height: 755px;
+}
+
+.description__text{
+    text-align: center;    
+    @include Sansus;
+    font-size: 35px;
+    color: #566358;
+    margin-bottom: 25px;
+    
+}
+
+.underline-green{
+    display: flex;
+    background: url(./assets/images/img/underline-green.png) center center no-repeat;
+    width: 90px;
+    height: 2px;
+    margin-bottom: 25px;
+}
+
+.description__technology{
+    @include roboto-regular;
+    color: $darkgreen;
+    text-transform: uppercase;
+    margin-bottom: 60px;
+}
+
+.description__btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 45px;
+    background: $green;
+   // border: 1px solid #ffffff;
+    text-decoration: none;
+    border-radius: 30px;
+    
+    &:hover{
+        background: $darkgreen;
+        border: 0 solid ;        
+    }
+
+    &:active{        
+        box-shadow: 0 0 0 60px rgba(0,0,0,.05) inset;
+    }
+}
+
+.description__elem{
+    display: flex;
+    width: 25px;
+    height: 25px;
+    margin-right: 10px;
+}
+.description__link{    
+    width: 100%;
+    height: 100%;
+}
+
+.description__btn-text{
+    @include roboto-regular;
+}

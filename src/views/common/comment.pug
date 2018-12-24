@@ -1,0 +1,32 @@
+section..comment
+    .comment__title        
+        .title.title_about
+            h2.title__text что обо мне говорят
+            .underline
+    .comment-content   
+        ul.comment-content__list
+            li.comment-content__item
+                .comment-content__avatar
+                    +image('../images/img/kovalchuk.png','','user__elem')
+                p.comment-content__text Эта девушка проходила обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
+                span.comment-content__label Ковальчук Дмитрий 
+                span.comment-content__origin -основатель Loftschool
+            li.comment-content__item
+                .comment-content__avatar
+                    +image('../images/img/sabancev.png','','user__elem')
+                p.comment-content__text Этот код выдержит любые испытания. Только пожалуйста, не загружается сайт на слишком старых браузерах!
+                span.comment-content__label Сабанцев Владимир 
+                span.comment-content__origin -преподаватель
+    .form  
+        h3.form__title
+        .underline-green 
+        label.form__name(for="")
+            input(type="text" class="form__elem" placeholder="Имя")
+            .error Заполните это поле
+        label.form__email(for="")
+            input(type="text" class="form__elem" placeholder="Email")
+            .error Заполните это поле
+        label.form__textarea(for="")
+            textarea#(class="form__block-text" name="comment" required="" placeholder="Ваше сообщение")
+            .error Заполните это поле
+            

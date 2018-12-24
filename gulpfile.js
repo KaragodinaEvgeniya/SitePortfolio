@@ -59,7 +59,7 @@ gulp.task("scripts", () => {
 //рендерим странички
 gulp.task("pug", () => {
   return gulp
-    .src(`${config.VIEWS_DIR}/**/*.pug`)
+    .src(`${config.VIEWS_DIR}/pages/*.pug`)
     .pipe($gp.plumber())
     .pipe($gp.pug())
     .pipe(gulp.dest(`${config.DIST_DIR}`))

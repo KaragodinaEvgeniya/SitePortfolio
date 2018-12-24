@@ -1,0 +1,36 @@
+.welcome__copyright{
+    display: flex;
+    width: 100%;
+    height: 10%;
+}
+
+.copyrigt{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.copyrigt__list{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    
+}
+
+.copyrigt__item{
+    display: flex;
+    align-items: center;
+    justify-content: center;        
+    border-right: 1px solid #ffffff;
+
+    &:last-child{
+        border: none;          
+    }     
+}
+
+.copyrigt__elem{
+    padding-right: 5px;
+    padding-left: 5px;
+    @include roboto-regular    
+}

@@ -1,1 +1,9 @@
-h1
+extends ../auth.layout.pug
+
+block content
+  .wrapper 
+    .my-works
+        include ../common/present.pug
+        main.content
+          include ../common/portfolio.pug
+          include ../common/comment.pug

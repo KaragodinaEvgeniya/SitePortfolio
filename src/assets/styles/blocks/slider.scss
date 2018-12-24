@@ -1,0 +1,16 @@
+.slider{
+    display: grid;
+    grid-template-rows:530px;
+    grid-area: a;
+    justify-items: center;
+    align-items: center;
+    padding-top: 5%;
+    padding-bottom: 5%;   
+    
+}
+
+.slider__pic   {    
+    width:80% ;
+    height:90%;  
+    
+}

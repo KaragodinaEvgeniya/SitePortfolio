@@ -1,0 +1,38 @@
+.portfolio__title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 190px;
+    width: 100%;   
+    position: relative;
+}
+
+.title{
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+@each $title in (works, about){
+    .title_#{$title} {
+        background: url(./assets/images/img/#{$title}.png) center center no-repeat;        
+    }
+}
+
+.title__text{    
+    @include Sansus;
+    font-size: 63px;
+    color: #373e42;
+    line-height:2.3;  
+}
+
+.underline{
+    display: flex;    
+    background: url(./assets/images/img/underline.png) center center no-repeat;
+    width: 90px;
+    height: 2px;
+    
+}

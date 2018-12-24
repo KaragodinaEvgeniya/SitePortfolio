@@ -1,0 +1,81 @@
+.welcome{
+    display: flex;
+    flex-flow: column;    
+    background:url(./assets/images/img/forest.png) center center no-repeat;  
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    width: 100%;
+    padding-right: 5%;
+}
+
+.welcome__heder{
+    display: flex;
+    justify-content: flex-end;    
+    height: 10%;
+    background: none;
+}
+
+.authorization{
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    
+}
+
+.authorization__btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 190px;
+    height: 50px;
+    background: none;
+    border: 1px solid #ffffff;
+    text-decoration: none;
+    border-radius: 30px;
+    font-family: 'Roboto', Helvetica, sans-serif;
+    font-weight: 500;
+    color: #ffffff;
+    font-size: 16px;
+    
+
+    &:hover{
+        background: $darkgreen;
+        border: 0 solid ;        
+    }
+
+    &:active{        
+        box-shadow: 0 0 0 60px rgba(0,0,0,.05) inset;
+    }
+}
+
+.welcome__content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80%;
+}
+
+.welcome__user{
+    display: flex;
+    flex-flow: column;    
+    padding-top: 40px;
+    border-radius: 20px;
+    background-color:rgba(#122620, 0.5);   
+    width: 400px;     
+}
+
+.welcome__social{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100px;
+    width: 100%;
+}
+.social__item{
+    fill: $gray;
+
+    &:hover{
+        fill:darkgreen;
+    }
+}

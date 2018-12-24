@@ -1,4 +1,16 @@
-body, html {
+//html{
+//  font-size: 16px;  
+  
+//  @include tablets{
+//      font-size: 14px
+//  }
+// @include phones{
+  //   font-size: 12px;
+  //}
+//}
+
+
+body{
   height: 100%;
 }
 
@@ -45,4 +57,9 @@ h1, h2, h3, h4, h5, h6 {
 p {
   margin: 0;
   padding: 0;
+}
+
+.content{
+  display: flex;
+  flex-flow: column;
 }
