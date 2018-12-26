@@ -5,4 +5,28 @@ mixin icon(iconName, iconClass)
 mixin image(imagePath, imageAlt, imageClass)
   img(src=`/assets/images/${imagePath}`, alt=`${imageAlt}`, class=`${imageClass}`)
 
+mixin social(modified)
 
+  - modified = modified || ''
+
+  .social(class=`${modified}`)
+    ul.social__list       
+      li.social__item                      
+          +icon('vk','social__vk')
+      li.social__item
+          +icon('github','social__githab')           
+      li.social__item
+          +icon('in','social__in')
+
+mixin copyrigt(modified)
+
+  - modified = modified || ''
+
+  .copyrigt(class=`${modified}`)
+    ul.copyrigt__list
+      li.copyrigt__item
+        p.copyrigt__elem © Карагодина Евгения
+      li.copyrigt__item
+        p.copyrigt__elem создано с любовью в Loftschool
+      li.copyrigt__item
+        p.copyrigt__elem 2018

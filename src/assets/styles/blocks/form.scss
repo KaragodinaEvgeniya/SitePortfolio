@@ -1,0 +1,138 @@
+.form{
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;    
+    padding-top: 40px;
+    border-radius: 20px;
+    background-color:rgba(#9a9c98, 0.4);   
+    width: 380px;
+    min-height: 475px;   
+    margin-bottom: 65px;
+}
+
+.form__title{
+    @include Sansus;
+    font-size: 35px;
+    color: #373e42;    
+    margin-bottom: 20px;
+}
+
+.form__name{
+    display: flex;
+    flex-flow: column;
+    width: 345px;
+    margin-bottom: 20px;
+    min-height: 46px;
+}
+
+.form__email{
+    display: flex;
+    flex-flow: column;
+    width: 345px;
+    margin-bottom: 20px;
+    min-height: 46px;
+}
+
+.form__elem{
+    display: flex;
+    outline: 0;
+    border-radius: 30px;
+    padding: 15px;
+    width: 100%;
+    height: 100%;
+    border: 1px solid #f8f9f8;    
+    box-sizing: border-box;
+    background: #f8f9f8;     
+}
+
+.error{
+    @include roboto-regular;
+    color: #5d1b07;
+    font-weight: 500;
+    padding-left: 15px;
+    opacity: 0;    
+}
+
+.form__textarea{
+    display: flex;
+    width: 345px;
+    min-height: 140px;
+    margin-bottom: 20px;
+}
+
+.form__block-text{
+    display: flex;
+    outline: 0;
+    border-radius: 20px;
+    padding: 15px;
+    width: 100%;
+    resize: none;
+    min-height: 140px;
+    border: 1px solid #f8f9f8;    
+    box-sizing: border-box;
+    background: #f8f9f8; 
+    @include roboto-regular;
+}
+
+.form-btn{
+    display: flex;
+    width: 100%;
+    border-radius: 0 0 20px 20px;
+    align-items: center;
+    justify-content: center;
+    height: 45px;
+    text-decoration: none;
+    
+}
+
+.form-btn__send {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    height: 100%; 
+    background: $green;      
+    border-right: 1px solid #f8f9f8;
+    border-radius: 0 0 0 20px ;  
+    @include roboto-regular;     
+    outline: none;
+    opacity: 0.8; 
+    
+    &:hover{
+        background: $darkgreen;
+        opacity: 0.8;   
+    }
+
+    &:active{        
+        box-shadow: 0 0 0 60px rgba(0,0,0,.05) inset;
+        opacity: 0.8; 
+
+    }
+}
+
+.form-btn__clear{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    height: 100%; 
+    background: $green;
+    opacity: 0.8;      
+    border-radius: 0 0 20px;
+    @include roboto-regular; 
+    outline: none;  
+    
+    &:hover{
+        background: $darkgreen; 
+        opacity: 0.8; 
+    }
+
+    &:active{        
+        box-shadow: 0 0 0 60px rgba(0,0,0,.05) inset;
+        opacity: 0.8;
+       
+        
+
+    }
+}

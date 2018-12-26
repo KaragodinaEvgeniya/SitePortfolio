@@ -4,6 +4,7 @@
     justify-content: center;
     height: 100px;
     width: 100%;
+    fill: $gray;
 }
 
 .social__list {
@@ -19,7 +20,31 @@
     justify-content: center;
     height: 25px;
     width: 35px;    
-    margin-right:  25px;  
+    margin-right:  25px;   
     
+    
+        &:hover{
+            fill:darkgreen;
+        }
+      
+    
+}
+
+.social__heder{
+    justify-content: left;
+    align-items: flex-start;
+    fill:#fff;    
+}
+
+.social__footer{
+    justify-content: left;
+    align-items: flex-start;
+    fill:#9a9e9f;
+    
+    
+    .social__item
+    :hover{
+        fill:#fff;
+    }
 }
 

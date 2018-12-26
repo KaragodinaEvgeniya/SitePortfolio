@@ -1,0 +1,14 @@
+.about-content   {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+   
+}
+
+.about-content__title    {
+    display: flex;     
+    text-align: center;   
+    width: 25%;   
+    position: relative;
+    line-height:2.3;  
+}

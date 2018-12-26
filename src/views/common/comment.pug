@@ -1,4 +1,4 @@
-section..comment
+section.comment
     .comment__title        
         .title.title_about
             h2.title__text что обо мне говорят
@@ -7,18 +7,18 @@ section..comment
         ul.comment-content__list
             li.comment-content__item
                 .comment-content__avatar
-                    +image('../images/img/kovalchuk.png','','user__elem')
+                    +image('../images/img/kovalchuk.png','','comment-content__elem')
                 p.comment-content__text Эта девушка проходила обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
                 span.comment-content__label Ковальчук Дмитрий 
                 span.comment-content__origin -основатель Loftschool
             li.comment-content__item
                 .comment-content__avatar
-                    +image('../images/img/sabancev.png','','user__elem')
+                    +image('../images/img/sabancev.png','','comment-content__elem')
                 p.comment-content__text Этот код выдержит любые испытания. Только пожалуйста, не загружается сайт на слишком старых браузерах!
                 span.comment-content__label Сабанцев Владимир 
                 span.comment-content__origin -преподаватель
     .form  
-        h3.form__title
+        h3.form__title связаться со мной
         .underline-green 
         label.form__name(for="")
             input(type="text" class="form__elem" placeholder="Имя")
@@ -27,6 +27,11 @@ section..comment
             input(type="text" class="form__elem" placeholder="Email")
             .error Заполните это поле
         label.form__textarea(for="")
-            textarea#(class="form__block-text" name="comment" required="" placeholder="Ваше сообщение")
+            textarea(class="form__block-text" name="comment" required="" placeholder="Ваше сообщение")
             .error Заполните это поле
+        .form-btn
+            button.form-btn__send Отправить
+            button.form-btn__clear Очистить
+    include ../common/footer.pug
+
             
