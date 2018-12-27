@@ -14,28 +14,60 @@
     justify-content: center;
     width: 100%;
     height: 70%;
-    position: relative;
+    
 
-    &::before{
-        content:'';
-        display: block;
-        position: absolute;
-        left: 0;       
-        top: 110%;
-        width: 100%;
-        height: 250px;
-        transform: translate Y(50%);
-        background-image: linear-gradient(to top right, #faf8f0 0%, #faf8f0 50%, transparent calc(50% +1px), transparent 100% ), linear-gradient(to top left, #faf8f0 0%, #faf8f0 50%, transparent calc(50% + 1px),transparent 100% );
-        background-position: 0 bottom, 10% bottom;
-        background-repeat: no-repeat;
-
-    }
+    
 }
 
 .present__scroll {
     display: flex;
     justify-content: center;
-    align-items: flex-end;
-    height: 10%;
+    align-items: center;
+    height: 30%;
+    position: relative;
+
+    &::after{
+        content:'';
+        display: block;
+        position: absolute;       
+        right: 0;
+        bottom: 0;
+        width: 0;
+        height: 0;             
+        border-bottom: 155px solid #f8f9f5;
+        border-left: 940px solid transparent;     
+
+    }
+
+    &::before{
+        content:'';
+        display: block;
+        position: absolute;       
+        left:  0;
+        bottom: 0;
+        width: 0;
+        height: 0;             
+        border-bottom: 155px solid #f8f9f5;
+        border-right: 940px solid transparent;
+
+    }
+}
+
+.present--about
+.present__scroll{
+    &::before{
+        border-bottom: 155px solid #ebefe2;
+    }
+
+
+}
+
+.present--blog
+.inscription{
+    background: url(./assets/images/img/blog.png) center center no-repeat;
+}
+
+.present--blog{
+    margin-bottom: 70px;
 }
 

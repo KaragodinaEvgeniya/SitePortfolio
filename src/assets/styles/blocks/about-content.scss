@@ -1,14 +1,28 @@
 .about-content   {
-    display: flex;
-    flex-flow: column;
+    display: flex;   
     justify-content: center;
+    width: 100vw;   
    
 }
 
-.about-content__title    {
-    display: flex;     
-    text-align: center;   
-    width: 25%;   
-    position: relative;
-    line-height:2.3;  
+.about-content__text{
+    display: flex;    
+    text-align: start;
+    width: 50%;
+}
+
+.about-content__user{
+    display: flex;    
+    width: 50%; 
+    background: #ebefe2;  
+}
+
+.about-content__skill{
+    display: flex; 
+    flex-flow: column;   
+    width: 50%;   
+    align-items: center;
+    padding-left: 35px;
+    padding-right: 35px;  
+
 }

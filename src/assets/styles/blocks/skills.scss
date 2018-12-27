@@ -1,0 +1,87 @@
+.skills{
+    display: flex; 
+    width: 100%;   
+}
+.skills__list{
+    display: flex;
+    flex-flow: column;
+    width: 100%;
+}
+
+.skills__item{
+    display: flex;
+    flex-flow: column;    
+}
+
+.skills-row{
+    display: flex;
+    flex-flow: column; 
+}
+
+.skills-row__title{    
+    @include roboto-regular;
+    font-weight:500;
+    color: #566358;
+    font-size: 28px;
+}
+
+.skill-row__list{
+    display: flex;
+    width: 100%;
+    height: 165px;
+}
+.skill-row__item{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 120px;
+    height: 120px;
+    margin-right: 40px;
+
+    &:last-child{
+        margin-left: 0;
+    }
+}
+
+.skill{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 120px;
+    height: 120px;
+    position: relative;
+}
+
+.skill__circles{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    right: 0;    
+    position: absolute;
+    transform: rotate(-90deg);
+    
+}
+
+
+.skill__circle{
+    display: flex;
+    
+    fill: transparent;
+    stroke: #dfdcd5;
+    stroke-width: 20px;
+    width: 100%;
+    height: 100%;
+    
+}
+
+.skill__circle--above{
+    width: 100%;
+    height: 100%;
+    opacity: 0.9;
+    stroke-dashoffset: 25.1;
+    stroke: #4e8839;
+    stroke-dasharray: 251;
+    transition: opacity,stroke-dashoffset .5s linear;
+}

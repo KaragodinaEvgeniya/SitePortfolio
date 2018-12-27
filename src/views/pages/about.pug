@@ -5,9 +5,11 @@ block variables
 
 block scripts
   script(src='about.bundle.js')
-
+  script(src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript")
+  script (src="../scripts/modules/map.js")
 block content
   .wrapper 
-    .about
-      include ../common/present.pug 
-      include ../common/about-content.pug   
+    main.about
+      +present('present--about')
+      include ../common/about-content.pug
+      include ../common/map.pug    

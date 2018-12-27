@@ -30,3 +30,15 @@ mixin copyrigt(modified)
         p.copyrigt__elem создано с любовью в Loftschool
       li.copyrigt__item
         p.copyrigt__elem 2018
+
+mixin present(modified)
+
+  - modified = modified || ''
+
+  section.present(class=`${modified}`)
+    include ./heder.pug 
+    .present__user
+      .inscription
+        include ./user.pug 
+    .present__scroll 
+      button.scroll

@@ -3,25 +3,31 @@
     flex-flow: column;
     justify-content: center;
     align-items: center;
-    width: 330px;
-    height: 755px;
+    
 }
 
 .description__text{
-    text-align: center;    
+    display: flex;
+    flex-flow: column;
+    text-align: center;  
+    align-items: center;  
     @include Sansus;
     font-size: 35px;
     color: #566358;
     margin-bottom: 25px;
-    
-}
 
-.underline-green{
-    display: flex;
-    background: url(./assets/images/img/underline-green.png) center center no-repeat;
-    width: 90px;
-    height: 2px;
-    margin-bottom: 25px;
+    &::after{
+        background:$gray;
+        content: "";
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        height: 3px;
+        margin-top: 20px;
+        width: 90px;
+    
+    }
+    
 }
 
 .description__technology{
@@ -65,4 +71,8 @@
 
 .description__btn-text{
     @include roboto-regular;
+}
+
+.description--content{
+    margin-bottom: 60px;
 }
