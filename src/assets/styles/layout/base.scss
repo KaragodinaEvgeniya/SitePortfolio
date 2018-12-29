@@ -1,12 +1,15 @@
 //html{
-//  font-size: 16px;  
+ /// font-size: 18px;
   
-//  @include tablets{
-//      font-size: 14px
-//  }
-// @include phones{
-  //   font-size: 12px;
+  //@include desktop{
+   // font-size: 16px
   //}
+  
+  //@include tablets{
+  //   font-size: 14px
+ ///} @include phones{
+  // font-size: 12px;
+ // }
 //}
 
 
@@ -62,4 +65,8 @@ p {
 .content{
   display: flex;
   flex-flow: column;
+}
+
+image,svg{
+  max-width: 100%;
 }

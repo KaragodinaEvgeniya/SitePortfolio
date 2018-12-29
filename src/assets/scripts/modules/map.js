@@ -7,9 +7,7 @@ function ready(){
             zoom: 12
         }, {
             searchControlProvider: 'yandex#search'
-        }),
-
-        
+        }),        
 
         myPlacemark = new ymaps.Placemark(myMap.getCenter(), {
             hintContent: 'Собственный значок метки',
@@ -32,3 +30,16 @@ function ready(){
     }
 }   
 document.addEventListener("DOMContentLoaded", ready);
+//var ymaps;
+//ymaps.ready(init);
+// function init()
+//   {
+//     new ymaps.Map("map", {
+
+//       center: [55.87365126447243,37.61493149524527],
+//       zoom: 12,
+//       behaviors: ['drag', 'dblClickZoom']
+//   });        
+
+//   }
+//   document.addEventListener("DOMContentLoaded", init);
