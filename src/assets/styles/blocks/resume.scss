@@ -3,6 +3,22 @@
     flex-flow: column;    
     width: 50%;
     padding-top: 20px;
+
+    @include desktop($desktop){
+        width: 70%;
+        justify-content: center;
+        align-items: center;
+    }
+
+    @include tablets($tablets){
+        width: 60%;
+        
+    }
+
+    @include phones($phones){
+        width: 90%;
+        
+    }
 }
 
 .resume__avatar{
@@ -22,5 +38,5 @@
     display: flex;
     flex-flow: column;
     width: 95%;
-    padding-bottom: 15px;
+    padding-bottom: 30px;
 }

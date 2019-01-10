@@ -16,40 +16,7 @@ section.about-content
             h3.description__text чем я могу быть #[br] вам полезна
             p Больше всего меня привлекет Frontend разработка, но я также знаком и могу решать не сложные задачи на Backend. Но давайте по порядку.
         .skills
-            ul.skills__list
-                li.skills__item.skills-row
-                    h4.skills-row__title Frontend
-                    ul.skill-row__list 
-                        each skill in ['HTML', 'CSS', 'JavaScript']
-                            li.skill-row__item
-                                .skill                                   
-                                    svg.skill__circles(viewBox="0 0 120 120") 
-                                        circle.skill__circle.skill__circle--hole(circle r="50" cx="50%" cy="50%")
-                                        circle.skill__circle.skill__circle--under(circle r="50" cx="50%" cy="50%")
-                                        circle.skill__circle.skill__circle--above(circle r="50" cx="50%" cy="50%")
-                                    .skill__title #{skill}
-                li.skills__item.skills-row
-                    h4.skills-row__title BacKend
-                    ul.skill-row__list 
-                        each skill in ['PHP', 'mySQL', 'Node.js &npm', 'Mongo.db']
-                            li.skill-row__item
-                                .skill                                   
-                                    svg.skill__circles(viewBox="0 0 120 120") 
-                                        circle.skill__circle.skill__circle--hole(circle r="50" cx="50" cy="40")
-                                        circle.skill__circle.skill__circle--under(circle r="50" cx="50" cy="40")
-                                        circle.skill__circle.skill__circle--above(circle r="50" cx="50" cy="40")
-                                    .skill__title #{skill}
-                li.skills__item.skills-row
-                    h4.skills-row__title WorkFlow
-                    ul.skill-row__list 
-                        each skill in ['Git', 'Gulp', 'Bower']
-                           li.skill-row__item
-                                .skill                                   
-                                    svg.skill__circles(viewBox="0 0 120 120") 
-                                        circle.skill__circle.skill__circle--hole(circle r="50" cx="50" cy="40")
-                                        circle.skill__circle.skill__circle--under(circle r="50" cx="50" cy="40")
-                                        circle.skill__circle.skill__circle--above(circle r="50" cx="50" cy="40")
-                                    .skill__title #{skill}
+            #skills-component
                
                     
 

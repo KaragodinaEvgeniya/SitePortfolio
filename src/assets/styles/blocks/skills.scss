@@ -1,21 +1,33 @@
 .skills{
     display: flex; 
-    width: 100%;   
+    width: 100%; 
+    
+    
 }
 .skills__list{
     display: flex;
     flex-flow: column;
     width: 100%;
+
+    
 }
 
 .skills__item{
     display: flex;
-    flex-flow: column;    
+    flex-flow: column; 
+      
 }
 
 .skills-row{
     display: flex;
     flex-flow: column; 
+
+    @include tablets($tablets){
+        align-items: center;
+        justify-content: center;
+        
+        
+     }
 }
 
 .skills-row__title{    
@@ -23,31 +35,54 @@
     font-weight:500;
     color: #566358;
     font-size: 28px;
+    margin-bottom: 15px;
 }
 
-.skill-row__list{
+.skills-row__list{
     display: flex;
+    flex-flow: wrap;
     width: 100%;
-    height: 165px;
+
+    @include tablets($tablets){
+        align-items: center;
+        justify-content: center;
+        
+        
+     }
+    
 }
-.skill-row__item{
+.skills-row__item{
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 120px;
+   width: 120px;   
     height: 120px;
-    margin-right: 40px;
+    min-height: 75px;
+    margin-right: 3%;
+    margin-bottom: 30px;
 
     &:last-child{
-        margin-left: 0;
+        margin-right: 0;
+
+        @include phones($phones){
+            margin-right: 30px;
+            
+        }
     }
+
+    @include phones($phones){
+        margin-right: 30px;
+        
+    }
+
+    
 }
 
 .skill{
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 120px;
+    width: 120px;   
     height: 120px;
     position: relative;
 }
@@ -80,8 +115,19 @@
     width: 100%;
     height: 100%;
     opacity: 0.9;
-    stroke-dashoffset: 25.1;
+   
     stroke: #4e8839;
-    stroke-dasharray: 251;
+    stroke-dasharray: 315;
+    stroke-dashoffset: 315;
     transition: opacity,stroke-dashoffset .5s linear;
+}
+
+.skill__title{
+    width: 80%;
+    text-align: center;
+    @include roboto-regular;
+    font-weight: 500;
+    color: $darkgreen;
+
+   
 }

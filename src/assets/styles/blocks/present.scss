@@ -25,17 +25,19 @@
     align-items: center;
     height: 30%;
     position: relative;
+    width: 100%;
 
     &::after{
         content:'';
         display: block;
         position: absolute;       
         right: 0;
+        left: 50%;
         bottom: 0;
         width: 0;
         height: 0;             
         border-bottom: 155px solid #f8f9f5;
-        border-left: 940px solid transparent;     
+        border-left: 58.75rem solid transparent;     
 
     }
 
@@ -43,12 +45,13 @@
         content:'';
         display: block;
         position: absolute;       
-        left:  0;
+        left:  -1;
+        right: 50%;
         bottom: 0;
         width: 0;
         height: 0;             
         border-bottom: 155px solid #f8f9f5;
-        border-right: 940px solid transparent;
+        border-right: 58.75rem solid transparent;
 
     }
 }

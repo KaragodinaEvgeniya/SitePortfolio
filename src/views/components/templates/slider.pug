@@ -1,0 +1,30 @@
+script(type="text/x-template")#slider-root
+    .slider
+        info
+        display
+        btns
+
+script(type="text/x-template")#slider-info
+    .example
+        .example__left
+            .description
+                h3.description__text сайт школы онлайн #[br] образования                
+                p.description__technology html, css, javascript
+                a.description__btn(href="#")
+                    .description__elem
+                        +icon('link','description__link')
+                    span.description__btn-text Посмотреть сайт
+
+script(type="text/x-template")#slider-display
+    .slider                                
+        +image('../images/img/school.png','','slider__pic')
+
+script(type="text/x-template")#slider-btns
+    button.btn-top
+        +image('../images/img/yoga.png','','btn-top__pic')
+        .btn-top__elem
+            +icon('scroll','btn-top__icon')
+    button.btn-botom
+        +image('../images/img/furniture.png','','btn-botom__pic')
+        .btn-botom__elem
+            +icon('scroll','btn-botom__icon')

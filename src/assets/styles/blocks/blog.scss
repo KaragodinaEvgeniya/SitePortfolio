@@ -11,6 +11,11 @@
     padding-left: 35px;
     padding-top: 15px;
     text-align: right;
+
+    @include tablets($tablets){
+        display: none;
+       
+    }
 }
 
 .blog__list{
@@ -56,5 +61,14 @@
 
 .blog__article{
     display: flex;
+
+
+    @include tablets($tablets){
+        width: 100%;
+        margin-right: 0;
+        padding-left: 30px;
+        padding-right: 30px;
+       
+    }
     
 }

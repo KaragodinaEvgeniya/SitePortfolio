@@ -7,6 +7,14 @@
     height: 100vh;
     width: 100%;
     padding-right: 5%;
+
+    @include tablets($tablets){
+        padding-right: 3%;
+    }
+
+    @include phones($phones){
+        padding-left: 3%;
+    }
 }
 
 .welcome__heder{
@@ -14,6 +22,11 @@
     justify-content: flex-end;    
     height: 10%;
     background: none;
+
+    @include phones($phones){
+        justify-content: center;
+    }
+    
 }
 
 .authorization{
@@ -47,6 +60,12 @@
     &:active{        
         box-shadow: 0 0 0 60px rgba(0,0,0,.05) inset;
     }
+
+    @include tablets($tablets){
+        width: 180px;
+    }
+
+    
 }
 
 .welcome__content{
@@ -62,7 +81,11 @@
     padding-top: 40px;
     border-radius: 20px;
     background-color:rgba(#122620, 0.5);   
-    width: 400px;     
+    width: 400px;  
+    
+    @include tablets($tablets){
+        width: 348px;
+    }
 }
 
 .welcome__social{

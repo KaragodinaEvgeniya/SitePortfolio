@@ -58,5 +58,10 @@
     :hover{
         fill:#fff;
     }
+
+    @include phones($phones){
+        justify-content: center;
+        
+    }
 }
 

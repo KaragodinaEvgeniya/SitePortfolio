@@ -28,8 +28,8 @@ mixin copyrigt(modified)
         p.copyrigt__elem © Карагодина Евгения
       li.copyrigt__item
         p.copyrigt__elem создано с любовью в Loftschool
-      li.copyrigt__item
-        p.copyrigt__elem 2018
+        p.copyrigt__elem.copyrigt__elem--border 2018
+      
 
 mixin present(modified)
 
@@ -42,3 +42,14 @@ mixin present(modified)
         include ./user.pug 
     .present__scroll 
       button.scroll
+    nav.out(id='nav')
+      ul.nav-label__list
+        li.nav-label__item
+          a.nav-label__elem(href='#') мои работы
+        li.nav-label__item
+          a.nav-label__elem(href='#') обо мне
+        li.nav-label__item
+          a.nav-label__elem(href='#') блог
+        li.nav-label__item
+          a.nav-label__elem(href='#') авторизация
+

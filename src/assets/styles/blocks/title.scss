@@ -16,20 +16,24 @@
     height: 155px;
     width: 100%;
     padding-top: 30px;
+
+    
     
    
 }
 
 @each $title in (works, about, about-smal){
     .title_#{$title} {
-        background: url(./assets/images/img/#{$title}.png) center center no-repeat;   
+        background: url(./assets/images/img/#{$title}.png) center center no-repeat;
+        @include phones($phones){
+            background-size: 90% ;
+            flex-flow: wrap;
+        }   
              
     }
+
+   
 }
-
-
-
-
 .title__text{ 
     display: flex;
     flex-flow: column;
@@ -49,6 +53,11 @@
         min-height: 3px;
         margin-top: 20px;
         width: 90px;
+        
+    }
+
+    @include phones($phones){
+        font-size: 35px;        
         
     }
 }

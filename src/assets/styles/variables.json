@@ -5,5 +5,8 @@
   "text-color": "#455a64",
   "grey": "#373e42",
   "light-grey": "#dfdcd5",
-  "test" : "#000"
+  "test" : "#000",
+  "desktop": "1200px",
+  "tablets":"768px",
+  "phones":"480px"
 }

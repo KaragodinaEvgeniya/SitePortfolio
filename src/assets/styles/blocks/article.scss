@@ -9,6 +9,11 @@
 
 .article__list{
     width: 85%;
+
+    @include tablets($tablets){
+        width: 100%;
+       
+    }
     
 }
 
@@ -27,7 +32,7 @@
 .article__date{
     @include roboto-regular;
     color: $darkgreen;
-    margin-bottom: 25px;
+    
     
 }
 
@@ -35,6 +40,7 @@
     @include roboto-regular;
     color: #455a64;
     margin-bottom: 70px;
+    margin-top: 20px;
 
     &::after{
         background: #ecebe4;

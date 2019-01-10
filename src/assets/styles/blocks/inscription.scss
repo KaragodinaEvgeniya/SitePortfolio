@@ -5,6 +5,11 @@
     height: 300px;
     top: 30%;
     background: url(./assets/images/img/portfolio.png) center center no-repeat;
+
+    @include tablets($tablets){            
+        background-size: 90%;             
+        
+    } 
    
     
 }
