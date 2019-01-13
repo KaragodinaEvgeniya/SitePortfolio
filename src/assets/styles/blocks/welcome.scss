@@ -81,7 +81,9 @@
     padding-top: 40px;
     border-radius: 20px;
     background-color:rgba(#122620, 0.5);   
-    width: 400px;  
+    width: 400px; 
+    overflow: hidden; 
+    
     
     @include tablets($tablets){
         width: 348px;

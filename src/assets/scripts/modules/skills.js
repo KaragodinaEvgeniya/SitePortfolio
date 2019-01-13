@@ -6,10 +6,10 @@ const skill={
         skillPercentage: Number,
         skillTitle: String
     },
-    metods:{
+    methods:{
         drawCircleDependsOnPercentage(){
         const circle = this.$refs['circle'];
-        const dashOffset = percent(
+        const dashOffset = parseInt(
             getComputedStyle(circle).getPropertyValue("stroke-dashoffset")
         );
         const percent = (dashOffset / 100) * (100 - this.skillPercentage);

@@ -42,14 +42,18 @@ mixin present(modified)
         include ./user.pug 
     .present__scroll 
       button.scroll
-    nav.out(id='nav')
-      ul.nav-label__list
-        li.nav-label__item
-          a.nav-label__elem(href='#') мои работы
-        li.nav-label__item
-          a.nav-label__elem(href='#') обо мне
-        li.nav-label__item
-          a.nav-label__elem(href='#') блог
-        li.nav-label__item
-          a.nav-label__elem(href='#') авторизация
+    nav.drawer(id="drawer")
+      ul.drawer__list
+        li.drawer__item.drawer__item--first
+        li.drawer__item.drawer__item--second
+          a.drawer__elem(href='http://localhost:3000/my-works.html') мои работы
+        li.drawer__item.drawer__item--third
+          a.drawer__elem(href='http://localhost:3000/about.html') обо мне
+        li.drawer__item.drawer__item--fourth
+          a.drawer__elem(href='http://localhost:3000/blog.html') блог
+        li.drawer__item.drawer__item--fifth
+          a.drawer__elem(href='http://localhost:3000') авторизация
+        li.drawer__item.drawer__item--sixth
+    
+
 

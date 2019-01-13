@@ -1,30 +1,39 @@
 script(type="text/x-template")#slider-root
-    .slider
-        info
-        display
-        btns
-
-script(type="text/x-template")#slider-info
     .example
-        .example__left
-            .description
-                h3.description__text сайт школы онлайн #[br] образования                
-                p.description__technology html, css, javascript
-                a.description__btn(href="#")
-                    .description__elem
-                        +icon('link','description__link')
-                    span.description__btn-text Посмотреть сайт
+        info(
+            :work="currentWork"
+        )
+        display(
+            :work="currentWork"
+        )
+        btns(
+            :works="works"
+            :index="currentIndex"
+            @slide="handleSlide"  
+        )
+
+script(type="text/x-template")#slider-info    
+    .example__left
+        .description
+            h3.description__text {{work.title}}               
+            p.description__technology {{work.skills}}
+            a.description__btn(:href="work.link")
+                .description__elem
+                    +icon('link','description__link')
+                span.description__btn-text Посмотреть сайт
 
 script(type="text/x-template")#slider-display
-    .slider                                
-        +image('../images/img/school.png','','slider__pic')
+    .slider
+        img.slider__pic(:src="work.photo", alt="")                                
+        
 
 script(type="text/x-template")#slider-btns
-    button.btn-top
-        +image('../images/img/yoga.png','','btn-top__pic')
-        .btn-top__elem
-            +icon('scroll','btn-top__icon')
-    button.btn-botom
-        +image('../images/img/furniture.png','','btn-botom__pic')
-        .btn-botom__elem
-            +icon('scroll','btn-botom__icon')
+    .buttons
+        button.btn-top(@click="slide('prev')")            
+            img.btn-top__pic(:src="prevButtonWorks[index].photo", alt="")            
+            .btn-top__elem
+                +icon('scroll','btn-top__icon')
+        button.btn-botom(@click="slide('next')")
+            img.btn-botom__pic(:src="nextButtonWorks[index].photo", alt="")            
+            .btn-botom__elem
+                +icon('scroll','btn-botom__icon')

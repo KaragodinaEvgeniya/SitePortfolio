@@ -43,6 +43,7 @@
     align-items: center;
     padding-left: 35px;
     padding-right: 35px;
+    background: #f8f9f5;
     
     @include tablets($tablets){
         width: 100%;
