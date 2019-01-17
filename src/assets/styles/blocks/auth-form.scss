@@ -1,0 +1,54 @@
+.auht-form{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: 70%;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.auht-form__label{
+    display: flex;
+    margin-bottom: 10px;
+  
+}
+
+.auht-form__icon{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom-left-radius: 22px;
+    border-top-left-radius: 22px;
+    background-color: #f0efe9;
+    width: 45px;
+    height: 45px;
+    order: 1;
+}
+
+.auht-form__login{
+    
+    overflow: hidden;
+    fill: #dfdcd5;
+    height: 17px;
+    width: 17px;
+}
+.auht-form__input{
+    -webkit-box-ordinal-group: 3;
+    border: 0;
+    border-bottom-right-radius: 22px;
+    border-top-right-radius: 22px;
+    height: 45px;
+    order: 2;
+    padding: 15px 15px;
+    width: 295px;
+    background-color: #f4f5f0;
+}
+
+.auht-form__password{
+    
+    overflow: hidden;
+    fill: #dfdcd5;
+    height: 17px;
+    width: 17px;
+}
+

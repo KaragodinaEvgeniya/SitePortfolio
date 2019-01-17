@@ -19,8 +19,38 @@ block content
                 a.welcome-nav__btn(href='http://localhost:3000/about.html') Обо мне
               li.welcome-nav__item
                 a.welcome-nav__btn(href='http://localhost:3000/blog.html') Блог
+        .welcome__auth
+          h2.welcome__title авторезуйтесь
+          form.auht-form(action="")
+            label.auht-form__label(for="login")
+              .auht-form__icon
+                +icon('login','auht-form__login') 
+              .auht-form__input(type="text") Логин
+            label.auht-form__label(for="password")
+              .auht-form__icon
+                +icon('password','auht-form__password') 
+              .auht-form__input(type="text") Пароль
+            label.auht-form__check-label(for="cb")
+            input(type="checkbox" id="cb")
+              .auht-form__check-block
+                +icon('check','auht-form__check') 
+              h3.auht-form__text Я человек
+            h3.auht-form__tet Вы точно не робот?
+            label.auht-form__radio-label(for="radio-label")
+              .auht-form__radio-btn(type="radio")
+              h3.auht-form__text Да
+            label.auht-form__radio-label(for="radio-label")
+              .auht-form__radio-btn(type="radio")
+              h3.auht-form__text Не уверен
+            nav.welcome-nav
+              ul.welcome-nav__list
+                li.welcome-nav__item
+                  a.welcome-nav__btn(href='#') На главную
+                li.welcome-nav__item
+                  a.welcome-nav__btn(href='#') Войти           
       .welcome__copyright
         +copyrigt
+
   
   
 

@@ -70,6 +70,7 @@
 
 .welcome__content{
     display: flex;
+    position: relative;
     justify-content: center;
     align-items: center;
     height: 80%;
@@ -96,4 +97,78 @@
     justify-content: center;
     height: 100px;
     width: 100%;
+}
+
+.welcome__auth{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 50%;    
+    flex-flow: column;    
+    padding-top: 40px;
+    border-radius: 20px;
+    background-color:rgba(#122620, 0.5);   
+    width: 400px; 
+    overflow: hidden;    
+    
+    @include tablets($tablets){
+        width: 348px;
+    } 
+}
+
+.welcome__title{
+    display: flex;
+    flex-flow: column;
+    @include Sansus;
+    font-size: 35px;
+    color: #f4f5f0;
+    height: 30%;    
+    align-items: center;
+   
+
+    &::after{
+        content: "";
+        display: flex;        
+        height: 3px;
+        width: 90px;
+        background: #f4f5f0;
+        
+    }
+}
+
+.auht-form__check-label{
+    display: flex;
+    cursor: pointer;
+
+   
+}
+
+.auht-form__check-block{
+    background: #f4f5f0;
+    border-radius: 2px;
+    height: 20px;
+    margin-right: 10px;
+    position: relative;
+    width: 20px;
+    &::checked{
+        background: $darkgreen;
+        
+        
+        .auht-form__check{
+            display: block;
+        }
+    } 
+}
+
+.auht-form__check{
+    display: none;
+    fill: #f4f5f0;
+    height: 9px;
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    width: 12px;
 }
