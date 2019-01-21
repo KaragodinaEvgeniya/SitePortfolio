@@ -2,7 +2,7 @@
 
 .btn-botom{
     display: grid;
-    grid-column: 2 / 3;     
+    grid-column: 1/2; 
     justify-content: center;
     align-items: center;    
    height: 100%;    
@@ -11,8 +11,8 @@
     padding: 0;    
     
     @include tablets($tablets){
-        grid-column: 3 / 5;
-        grid-row: 4/5;
+        grid-column: 2/3;
+        grid-row: 1;
         
     }
 }

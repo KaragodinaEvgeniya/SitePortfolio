@@ -1,1 +1,6 @@
-console.log("auth module loaded");
+import "./modules/authorization";
+import preloader from './modules/preloader';
+
+
+
+document.addEventListener("DOMContentLoaded", preloader);

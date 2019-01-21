@@ -10,6 +10,8 @@
 .auht-form__label{
     display: flex;
     margin-bottom: 10px;
+    justify-content: center;
+    align-items: center;
   
 }
 
@@ -42,6 +44,7 @@
     padding: 15px 15px;
     width: 295px;
     background-color: #f4f5f0;
+   justify-content: center;
 }
 
 .auht-form__password{
@@ -51,4 +54,84 @@
     height: 17px;
     width: 17px;
 }
+
+.auht-form__check-label{
+    display: flex;
+    cursor: pointer;
+   
+
+   
+}
+
+.auht-form__check-block{
+    background: #f4f5f0;
+    border-radius: 2px;
+    height: 20px;
+    margin-right: 10px;
+    position: relative;
+    width: 20px;
+    &::checked{
+        background: $darkgreen;
+        
+        
+        .auht-form__check{
+            display: block;
+        }
+    } 
+}
+
+.auht-form__check{
+    display: none;
+    fill: #f4f5f0;
+    height: 9px;
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    width: 12px;
+}
+
+.auht-form__text{
+    font-size: 16px;
+    color: #f4f5f0;
+    margin-bottom: 10px;
+    
+}
+
+.auht-form__row{
+    display: flex;
+}
+
+.auht-form__radio-label{
+    display: flex;
+    margin-right: 40px;
+}
+
+.auht-form__radio-btn{
+    background: #f4f5f0;
+    border-radius: 50%;
+    height: 20px;
+    margin-right: 0.625rem;
+    position: relative;
+    width: 20px;
+    cursor: pointer;
+
+    &::after{
+        background: $darkgreen;
+        border-radius: 50%;
+        content: "";
+        // display: none;
+        height: 8px;
+        left: 50%;
+        position: absolute;
+        top: 50%;
+        transform: translate(-50%,-50%);
+        width: 8px;
+
+        &.check{
+            display: block;
+        }
+    }
+}
+
 

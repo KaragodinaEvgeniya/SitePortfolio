@@ -2,55 +2,202 @@ extends ../auth.layout.pug
 
 block content
   .wrapper 
-    .welcome      
-      .welcome__heder
-        .authorization
-          a.authorization__btn(href='#') Авторизоваться
-      .welcome__content
-        .welcome__user
-          include ../common/user.pug
-          .welcome__social
-            +social                  
-          nav.welcome-nav
-            ul.welcome-nav__list
-              li.welcome-nav__item
-                a.welcome-nav__btn(href='http://localhost:3000/my-works.html') Мои работы
-              li.welcome-nav__item
-                a.welcome-nav__btn(href='http://localhost:3000/about.html') Обо мне
-              li.welcome-nav__item
-                a.welcome-nav__btn(href='http://localhost:3000/blog.html') Блог
-        .welcome__auth
-          h2.welcome__title авторезуйтесь
-          form.auht-form(action="")
-            label.auht-form__label(for="login")
-              .auht-form__icon
-                +icon('login','auht-form__login') 
-              .auht-form__input(type="text") Логин
-            label.auht-form__label(for="password")
-              .auht-form__icon
-                +icon('password','auht-form__password') 
-              .auht-form__input(type="text") Пароль
-            label.auht-form__check-label(for="cb")
-            input(type="checkbox" id="cb")
-              .auht-form__check-block
-                +icon('check','auht-form__check') 
-              h3.auht-form__text Я человек
-            h3.auht-form__tet Вы точно не робот?
-            label.auht-form__radio-label(for="radio-label")
-              .auht-form__radio-btn(type="radio")
-              h3.auht-form__text Да
-            label.auht-form__radio-label(for="radio-label")
-              .auht-form__radio-btn(type="radio")
-              h3.auht-form__text Не уверен
+    #container
+      .welcome      
+        .welcome__heder
+          .authorization
+            a.authorization__btn(href='#', id="authorization") Авторизоваться
+        .welcome__content(id="welcome")
+          .welcome__user
+            include ../common/user.pug
+            .welcome__social
+              +social                  
             nav.welcome-nav
               ul.welcome-nav__list
                 li.welcome-nav__item
-                  a.welcome-nav__btn(href='#') На главную
+                  a.welcome-nav__btn(href='http://localhost:3000/my-works.html') Мои работы
                 li.welcome-nav__item
-                  a.welcome-nav__btn(href='#') Войти           
-      .welcome__copyright
-        +copyrigt
+                  a.welcome-nav__btn(href='http://localhost:3000/about.html') Обо мне
+                li.welcome-nav__item
+                  a.welcome-nav__btn(href='http://localhost:3000/blog.html') Блог
+          .welcome__auth
+            h2.welcome__title авторезуйтесь
+            form.auht-form(action="")
+              label.auht-form__label(for="login")
+                .auht-form__icon
+                  +icon('login','auht-form__login') 
+                .auht-form__input(type="text") Логин
+              label.auht-form__label(for="password")
+                .auht-form__icon
+                  +icon('password','auht-form__password') 
+                .auht-form__input(type="text") Пароль
+              label.auht-form__check-label(for="cb")            
+                .auht-form__check-block
+                  +icon('check','auht-form__check') 
+                p.auht-form__text Я человек
+              h3.auht-form__text Вы точно не робот?
+              .auht-form__row
+                label.auht-form__radio-label(for="radio-label")
+                  .auht-form__radio-btn(type="radio")
+                  p.auht-form__text Да
+                label.auht-form__radio-label(for="radio-label")
+                  .auht-form__radio-btn(type="radio")
+                  p.auht-form__text Не уверен
+              nav.welcome-nav
+                ul.welcome-nav__list
+                  li.welcome-nav__item
+                    a.welcome-nav__btn(href='#') На главную
+                  li.welcome-nav__item
+                    a.welcome-nav__btn(href='#') Войти           
+        .welcome__copyright
+          +copyrigt
 
+      script(src='https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenLite.min.js')
+      script(src='http://threejs.org/build/three.min.js')
+      style.
+        body {
+          margin: 0;
+        }
+        #container {
+          position: relative;
+          z-index:1;
+        }
+        #container:after {
+          content: '';
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: 100%;
+          height: 100%;
+          background: linear-gradient(135deg, rgba(0, 0, 0, .5), transparent 50%, rgba(0, 0, 0, .5));
+        }
+      script#vertexShader(type='x-shader/x-vertex').
+        varying vec2 v_position;
+        uniform vec2 u_size;
+        uniform vec2 u_resolution;
+        void main() {
+          v_position = (position.xy+1.0)*0.5;
+          gl_Position =  vec4(position, 1.0);
+        }
+      script#fragmentShader(type='x-shader/x-fragment').
+        uniform float u_time;
+        varying vec2 v_position;
+        uniform sampler2D u_image;
+        uniform sampler2D u_maps;
+        uniform vec2 u_mouse;
+        uniform float u_dpi;
+        uniform vec2 u_resolution;
+        vec2 pos(){
+          return vec2(0.0,0.0);
+        }
+        vec4 blend(vec4 bg,vec4 fg){
+        vec3 bgm=bg.rgb*bg.a;
+        vec3 fgm=fg.rgb*fg.a;
+        float ia=1.0-fg.a;
+        float a=(fg.a + bg.a * ia);
+        vec3 rgb;
+        if(a!=0.0){
+          rgb=(fgm + bgm * ia) / a;
+        }else{
+          rgb=vec3(0.0,0.0,0.0);
+        }
+        return vec4(rgb,a);
+        }
+        vec2 pixel(){
+        return vec2(1.0*1.0)/u_resolution;
+        }
+        float wave(float x,float freq, float speed){
+        return sin(x*freq+((u_time*(3.1415/2.0))*speed));
+        }
+        vec2 waves(vec2 pos){
+        vec4 maps=texture2D(u_maps,pos);
+        float mask=maps.r;
+        float y=maps.g;
+        float y2=pow(y,2.0);
+        vec2 intensity=vec2(
+          0.5-(y2*0.5),
+          0.2+(y2*1.8)
+        )*pixel();
+        vec2 waves=vec2(
+          wave(y,400.0-(y2*200.0),-0.03),
+          wave(y,400.0-(y2*400.0*0.05),-0.045)
+          +wave(y,900.0-(y2*900.0*0.05),-0.05)
+          +wave(pos.x,20.0+(y2*20.0*1.5),-0.01)
+        );
+        return pos+(waves*intensity*mask);
+        }
+        vec2 depth(vec2 pos){
+        vec2 intensity=vec2(0.01,0.01);
+        float d=0.05-pow(texture2D(u_maps,pos).b,1.0);
+        return pos+(intensity*u_mouse*d);
+        }
+        void main(){
+          vec2 pos=v_position.xy;
+          vec2 turbulence=depth(waves(pos));
+          vec2 noTurbulence=depth(pos);
+          vec4 c=texture2D(u_image,turbulence);
+          gl_FragColor=vec4(c.rgb,1.0);
+        }
+      script.
+        var container;
+        var camera, scene, renderer;
+        var uniforms;
+        var mouse = {x:0, y:0};
+        var loader = new THREE.TextureLoader();
+        init();
+        animate();
+        function init() {
+          container = document.getElementById( 'container' );
+          camera = new THREE.Camera();
+          camera.position.z = 1;
+          scene = new THREE.Scene();
+          var geometry = new THREE.PlaneBufferGeometry( 2, 2 );
+          var MyTexture = loader.load( "../assets/images/img/water.jpg" );
+          var mapTexture = loader.load( "../assets/images/img/water-maps.jpg" );
+          MyTexture.minFilter = THREE.LinearFilter;
+          uniforms = {
+            u_time: { type: "f", value: 1.0 },
+            u_animation: { type: "f", value: 0.0 },
+            u_mouse: { type: "v2", value: new THREE.Vector2() },
+            u_resolution: { type: "v2", value: new THREE.Vector2() },
+            u_size: {type:"v2", value: new THREE.Vector2(MyTexture.width,MyTexture.height) },
+            u_image: {value:MyTexture },
+            u_maps: {value:mapTexture}
+          };
+          var material = new THREE.ShaderMaterial( {
+            uniforms: uniforms,
+            vertexShader: document.getElementById( 'vertexShader' ).textContent,
+            fragmentShader: document.getElementById( 'fragmentShader' ).textContent
+          } );
+          var mesh = new THREE.Mesh( geometry, material );
+          scene.add( mesh );
+          renderer = new THREE.WebGLRenderer();
+          renderer.setPixelRatio( window.devicePixelRatio );
+          container.appendChild( renderer.domElement );
+          onWindowResize();
+          window.addEventListener( 'resize', onWindowResize, false );
+        }
+        function onWindowResize( event ) {
+          renderer.setSize( window.innerWidth, window.innerHeight );
+          uniforms.u_resolution.value.x = renderer.domElement.width;
+          uniforms.u_resolution.value.y = renderer.domElement.height;
+          uniforms.u_mouse.value.x = mouse.x;
+          uniforms.u_mouse.value.y = mouse.y;
+        }
+        function animate() {
+          requestAnimationFrame( animate );
+          render();
+        }
+        function render() {
+          uniforms.u_time.value += 1.0;
+          renderer.render( scene, camera );
+        }
+        document.addEventListener('mousemove',function(event){
+          TweenLite.to(uniforms.u_mouse.value, 1, {
+            x: ((event.pageX / window.innerWidth) - 0.5) * 1.5,
+            y: ((event.pageY / window.innerHeight)- 0.5) * 1.5
+          })
+        })
   
   
 

@@ -1,12 +1,16 @@
 .welcome{
+    position: absolute;
+    top: 0;
+    left: 0;
     display: flex;
     flex-flow: column;    
-    background:url(./assets/images/img/forest.png) center center no-repeat;  
+    // background:url(./assets/images/img/forest.png) center center no-repeat;  
     background-size: cover;
     background-position: center;
     height: 100vh;
     width: 100%;
     padding-right: 5%;
+    z-index:2;
 
     @include tablets($tablets){
         padding-right: 3%;
@@ -35,6 +39,8 @@
     align-items: flex-end;
     
 }
+
+
 
 .authorization__btn{
     display: flex;
@@ -74,20 +80,35 @@
     justify-content: center;
     align-items: center;
     height: 80%;
+    perspective: 1000px;
+    transition: 0.6s;
+	transform-style: preserve-3d;
+
+    
 }
 
 .welcome__user{
     display: flex;
-    flex-flow: column;    
+    flex-flow: column; 
+    position: absolute;
+    top: 20%;
+    left: 40%;    
     padding-top: 40px;
     border-radius: 20px;
     background-color:rgba(#122620, 0.5);   
     width: 400px; 
-    overflow: hidden; 
-    
+    overflow: hidden;  
+   transform:rotateY(0deg);  
+   z-index: 2;
+    backface-visibility: hidden;    
     
     @include tablets($tablets){
         width: 348px;
+        left: 30%; 
+    }
+
+    @include phones($phones){
+        left: 10%; 
     }
 }
 
@@ -104,18 +125,29 @@
     justify-content: center;
     align-items: center;
     position: absolute;
-    top: 0;
-    left: 50%;    
+    top: 20%;
+    left: 40%;    
     flex-flow: column;    
     padding-top: 40px;
     border-radius: 20px;
     background-color:rgba(#122620, 0.5);   
-    width: 400px; 
-    overflow: hidden;    
+    width: 400px;
+    height: 426px; 
+    overflow: hidden;     
+    transform:rotateY(180deg);
+    perspective: 100px;    
+    backface-visibility: hidden;
+    transform-origin: center;
+
     
     @include tablets($tablets){
         width: 348px;
-    } 
+        left: 30%; 
+    }
+    
+    @include phones($phones){
+        left: 10%; 
+    }
 }
 
 .welcome__title{
@@ -138,37 +170,8 @@
     }
 }
 
-.auht-form__check-label{
-    display: flex;
-    cursor: pointer;
-
-   
-}
-
-.auht-form__check-block{
-    background: #f4f5f0;
-    border-radius: 2px;
-    height: 20px;
-    margin-right: 10px;
-    position: relative;
-    width: 20px;
-    &::checked{
-        background: $darkgreen;
-        
-        
-        .auht-form__check{
-            display: block;
-        }
-    } 
-}
-
-.auht-form__check{
-    display: none;
-    fill: #f4f5f0;
-    height: 9px;
-    left: 50%;
-    position: absolute;
-    top: 50%;
-    transform: translate(-50%,-50%);
-    width: 12px;
+.flip{
+    
+    transform: rotateY(180deg);
+    
 }

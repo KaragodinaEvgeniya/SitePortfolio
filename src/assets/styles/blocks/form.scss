@@ -1,16 +1,33 @@
 .form{
     display: flex;
     flex-flow: column;
+    position: relative;
     justify-content: center;
     align-items: center;    
     padding-top: 40px;
     padding-left: 20px;
     padding-right: 20px;
-    border-radius: 20px;
-    background-color:rgba(#9a9c98, 0.4);   
+    border-radius: 20px;    
     width: 380px;
     min-height: 475px;   
     margin-bottom: 65px;
+    z-index: 1;
+    overflow: hidden;
+
+    &::before{
+        content: "";
+        position: absolute;
+        top:0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: -1;
+        filter: blur(10px);
+        background: url(./assets/images/img/fon.png) center center no-repeat; 
+        margin: -30px;
+        
+
+    }
 
     @include phones($phones){
         width: 300px;       
@@ -90,7 +107,7 @@
 
 .form-btn{
     display: flex;
-    width: 115%;
+    width: 112%;
     border-radius: 0 0 20px 20px;
     align-items: center;
     justify-content: center;
