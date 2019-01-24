@@ -24,25 +24,30 @@ block content
             h2.welcome__title авторезуйтесь
             form.auht-form(action="")
               label.auht-form__label(for="login")
-                .auht-form__icon
-                  +icon('login','auht-form__login') 
-                .auht-form__input(type="text") Логин
+                input.auht-form__icon(type="text" placeholder="Логин")
+                .auht-form__ico-wrap
+                  +icon('login','auht-form__login')                
               label.auht-form__label(for="password")
-                .auht-form__icon
-                  +icon('password','auht-form__password') 
-                .auht-form__input(type="text") Пароль
+                input.auht-form__icon(type="text" placeholder="Пароль")
+                .auht-form__ico-wrap
+                  +icon('password','auht-form__password')                
               label.auht-form__check-label(for="cb")            
-                .auht-form__check-block
-                  +icon('check','auht-form__check') 
-                p.auht-form__text Я человек
+                input.auht-form__check-block(type="checkbox")
+                .auht-form__check-content
+                  .auht-form__btn
+                  p.auht-form__text Я человек
               h3.auht-form__text Вы точно не робот?
               .auht-form__row
                 label.auht-form__radio-label(for="radio-label")
-                  .auht-form__radio-btn(type="radio")
-                  p.auht-form__text Да
+                  input.auht-form__radio(type="radio")
+                  .auht-form__radio-content
+                    .auht-form__radio-btn
+                    p.auht-form__text Да
                 label.auht-form__radio-label(for="radio-label")
-                  .auht-form__radio-btn(type="radio")
-                  p.auht-form__text Не уверен
+                  input.auht-form__radio(type="radio")
+                  .auht-form__radio-content
+                    .auht-form__radio-btn
+                    p.auht-form__text Не уверен
               nav.welcome-nav
                 ul.welcome-nav__list
                   li.welcome-nav__item
