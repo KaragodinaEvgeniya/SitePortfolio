@@ -1,9 +1,12 @@
+
+
 .blog{
     display: flex;
     width: 100%;
 }
 
 .blog__menu{
+   position: relative;
     display: flex;
     flex-flow: column;
     width: 25%;
@@ -11,18 +14,86 @@
     padding-left: 35px;
     padding-top: 15px;
     text-align: right;
-
+    
     @include tablets($tablets){
         display: none;
        
     }
 }
 
+.blog__mobail-menu{
+    position: absolute;
+    display: none;
+    flex-flow: column;
+    width: 50%;
+    margin-right: 0;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 75px;
+    text-align: right;
+    background: $green;
+    height: 100%;
+    transition:  .8s linear;
+    
+   
+
+    @include tablets($tablets){
+        display: flex;
+        left: -50%;
+        color: #ffffff;
+        z-index: 205;
+        justify-content: flex-start;
+        padding-top: 1070px;      
+        
+        
+    }   
+
+
+    @include phones($phones){
+        left: -90%;
+        width: 90%;
+    }
+}
+
+.blog__menu-open{
+    content: "";
+    display: flex;
+    align-items: flex-end;
+    width: 20px;
+    height: 40px;
+    background:svg-load('pull.svg', fill=#6c9c5a) center center no-repeat;
+    position: static;
+    position: sticky;
+    top: 460px;
+    left:50%;
+    margin-right: -38px;
+
+    @include phones($phones){
+        left: 90%;
+    }
+  
+       
+}
+
+
+.menu--open{
+    left:0px;
+    
+}
+
+
+
 .blog__list{
+    position: static;
+    position: sticky;
+    top: 70px;
     display: flex;
     flex-flow: column; 
-    list-style: none;   
+    list-style: none;
+  
 }
+
+
 
 .blog__item{
     display: flex;
@@ -45,7 +116,7 @@
     }
 }
 
-.blog__item--active{
+.blog-active{
     color: $green;
 
     &::after{
@@ -61,6 +132,8 @@
 
 .blog__article{
     display: flex;
+    width: 75%;
+   
 
 
     @include tablets($tablets){
@@ -70,5 +143,23 @@
         padding-right: 30px;
        
     }
+
+
     
 }
+
+.white
+.blog__item{
+    color: #ffffff;
+    font-weight: 300;
+    &::after{
+        display: none;
+    }
+}
+
+.white
+.blog-active{
+    color: #ffffff;
+    font-weight: 500;
+}
+

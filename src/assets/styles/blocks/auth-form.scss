@@ -8,6 +8,7 @@
 }
 
 .auht-form__label{
+    
     display: flex;
     margin-bottom: 10px;
     justify-content: center;
@@ -26,10 +27,21 @@
     width: 295px;
     background-color: #f4f5f0;
    justify-content: center;
+   outline: none;
 
-    
+  
+   &:focus{
+       border: 1px solid $darkgreen;      
+   }    
 }
 
+.auht-form__icon:focus + .auht-form__ico-wrap .auht-form__login {    
+    fill: $darkgreen;    
+}
+
+.auht-form__icon:focus + .auht-form__ico-wrap  .auht-form__password{    
+    fill: $darkgreen;
+}
 .auht-form__ico-wrap{
     display: flex;
     align-items: center;
@@ -40,6 +52,9 @@
     width: 45px;
     height: 45px;
     order: 1;
+    outline: none;
+
+    
 }
 
 .auht-form__login{
@@ -101,7 +116,7 @@
         content: "";
         opacity: 0;
         
-        background: url(./assets/images/icons/check.svg) center center no-repeat; 
+        background:svg-load('check.svg', fill=#4e8839) center center no-repeat;
         fill: #f4f5f0;
         height: 19px;
         left: 50%;

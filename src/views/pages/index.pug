@@ -22,17 +22,19 @@ block content
                   a.welcome-nav__btn(href='http://localhost:3000/blog.html') Блог
           .welcome__auth
             h2.welcome__title авторезуйтесь
-            form.auht-form(action="")
+            form.auht-form(action="" id="auhtForm")
               label.auht-form__label(for="login")
-                input.auht-form__icon(type="text" placeholder="Логин")
+                input.auht-form__icon(type="text" placeholder="Логин" name="login" required)
+                .error.error_login(id="errorLogin") 
                 .auht-form__ico-wrap
                   +icon('login','auht-form__login')                
               label.auht-form__label(for="password")
-                input.auht-form__icon(type="text" placeholder="Пароль")
+                input.auht-form__icon(type="text" placeholder="Пароль" name="password" required)
+                .error.error_password(id="errorPass") 
                 .auht-form__ico-wrap
                   +icon('password','auht-form__password')                
               label.auht-form__check-label(for="cb")            
-                input.auht-form__check-block(type="checkbox")
+                input.auht-form__check-block(type="checkbox")                
                 .auht-form__check-content
                   .auht-form__btn
                   p.auht-form__text Я человек
@@ -51,11 +53,16 @@ block content
               nav.welcome-nav
                 ul.welcome-nav__list
                   li.welcome-nav__item
-                    a.welcome-nav__btn(href='#') На главную
+                    a.welcome-nav__btn(href='#' id="close") На главную
                   li.welcome-nav__item
-                    a.welcome-nav__btn(href='#') Войти           
+                    a.welcome-nav__btn(href='#' id="welcome-nav__btn" onclick="return false;") Войти           
         .welcome__copyright
           +copyrigt
+  .modal.modal--error
+    .modal__content
+      .modal__text Произошла ошибка
+        a.button.button--close(href="#" onclick="return false;") закрыть
+      
 
       script(src='https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenLite.min.js')
       script(src='http://threejs.org/build/three.min.js')
