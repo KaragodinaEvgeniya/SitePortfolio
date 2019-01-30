@@ -18,6 +18,6 @@
 
     drawBlur();
 
-    window.addEventListener("resize ", () => {
-        blur()
-    })
+    window.onresize = function () {
+        drawBlur();
+    }

@@ -1,6 +1,5 @@
-import "./modules/authorization";
 import preloader from './modules/preloader';
-
+import "./modules/authorization";
 import "./modules/auth_form";
 
 

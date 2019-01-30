@@ -151,13 +151,22 @@
 
 .form-btn{
     display: flex;
-    width: 100%;
+    width: 112%;
     border-radius: 0 0 20px 20px;
     align-items: center;
     justify-content: center;
     height: 45px;
     text-decoration: none;
     z-index: 1;
+    margin-bottom: -45px;
+   
+    @include phones($phones){
+        
+        margin-bottom: -65px; 
+        width:116% ; 
+        
+    }
+    
     
     
 }
@@ -218,5 +227,6 @@
 .form__blur{
     filter: blur(20px);
     z-index: 0;
-    position: absolute;   
+    position: absolute; 
+    background: url(./assets/images/img/fon.png) 50% no-repeat;  
 }
