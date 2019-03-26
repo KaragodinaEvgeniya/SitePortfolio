@@ -2,9 +2,21 @@
     display: flex;  
     flex-flow: column;    
     align-items: center;  
-    width: 100%;
-    height: 100vh;
+    width: 100vw;
+    height: 100%;    
     background: url(./assets/images/img/fon.png) center center no-repeat;
+    position: relative;
+
+    @include tablets($tablets){            
+       background-position: bottom;          
+            
+    } 
+
+    @include phones($phones){
+        padding-left: 5%;
+        padding-right: 5%;       
+        
+    }
 }
 
 .comment__title  {
@@ -14,12 +26,17 @@
     width: 380px;   
     position: relative;
     line-height:2.3;  
+
+    @include phones($phones){
+        height: 155px;       
+        
+    }
 }
 
 .comment-content  {
     display: flex;
     justify-content: center;
-    align-items: center; 
+    align-items: center;   
 
 }
 
@@ -27,18 +44,45 @@
     display: flex;  
     justify-content: center;    
     width: 50%;
-}
+    margin-bottom: 70px;
+
+    @include desktop($desktop){            
+        width: 70%;              
+    }
+
+    @include tablets($tablets){            
+        width: 80%;              
+            
+    } 
+
+    @include phones($phones){
+        flex-flow: column;        
+        
+    }
+} 
+
+    
+
 .comment-content__item{
     display: flex;
     flex-flow: column;
     justify-content: flex-start;
     align-items: center;
     @include roboto-regular;
-    width: 47%;
+    width: 50%;
     margin-right:25px;
 
     &:last-child{
         margin-right: 0;
+    }
+
+    @include phones($phones){
+       width: 100%;
+       margin-right: 0;
+       &:first-child{
+        margin-bottom:30px;
+       }       
+        
     }
 }
 .comment-content__avatar{

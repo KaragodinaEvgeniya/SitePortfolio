@@ -1,11 +1,32 @@
+.buttons{
+    display: grid;
+    grid-column: 3/5;
+    grid-row: 3 ; 
+    user-select: none;
+    @include tablets($tablets){
+        grid-column: 1/5;
+        grid-row: 4;
+       
+    }
+    
+}
+
 .btn-top{
-    grid-area: b;
-    grid-template-rows:230px;    
-    justify-items: center;
-    align-items: center;
+    display: grid;
+    grid-column: 2/3;
+    grid-row: 1 ; 
+    justify-content: center;
+    align-items: center;    
+    height: 100%;    
     position: relative;
     outline: 0;
-    padding: 0;    
+    padding: 0; 
+    
+    @include tablets($tablets){
+        grid-column: 1/2;
+        grid-row: 1;
+       
+    }
 }
 
 .btn-top::before{
@@ -25,7 +46,13 @@
 }
 
 .btn-top__pic{    
-    height:90%; 
+    height:80%;
+    width: 100%; 
+
+    @include phones($phones){
+        width:90% ;
+        height:70%;  
+    }
     
     
 }
@@ -37,6 +64,11 @@
     position: absolute;
     top: 50%;
     left: 50%;
+
+    @include phones($phones){
+        top: 45%;
+        left: 30%; 
+    }
 }
 
 .btn-top__icon{

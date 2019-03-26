@@ -1,13 +1,4 @@
-//html{
-//  font-size: 16px;  
-  
-//  @include tablets{
-//      font-size: 14px
-//  }
-// @include phones{
-  //   font-size: 12px;
-  //}
-//}
+
 
 
 body{
@@ -27,6 +18,10 @@ body {
   overflow: hidden;
   min-height: 100%;
   position: relative;
+}
+
+.wraper__blog {
+  overflow: visible;
 }
 
 .container {
@@ -62,4 +57,8 @@ p {
 .content{
   display: flex;
   flex-flow: column;
+}
+
+image,svg{
+  max-width: 100%;
 }

@@ -1,0 +1,63 @@
+.article{
+    display: flex;
+    flex-flow: column;
+    width: 60%;
+    margin-right: 8%;
+    padding-left: 5px;    
+    text-align: left;
+}
+
+.article__list{
+    width: 85%;
+
+    @include tablets($tablets){
+        width: 100%;
+       
+    }
+    
+}
+
+.article__item{
+    width: 100%;
+}
+
+.article__title{
+    @include Sansus;
+    text-transform: none;
+    color: #455a64;
+    font-size: 35px;
+    margin-bottom: 30px;
+}
+
+.article__date{
+    @include roboto-regular;
+    color: $darkgreen;
+    
+    
+}
+
+.article__text{
+    @include roboto-regular;
+    color: #455a64;
+    margin-bottom: 70px;
+    margin-top: 20px;
+
+    &::after{
+        background: #ecebe4;
+        content: "";
+        display: block;
+        height: 4px;
+        margin-top: 70px;
+        width: 700px;
+    }
+
+    
+}
+
+.article__text--last{
+    &::after{
+        background: none;
+        margin-top: 0;
+    }
+
+}

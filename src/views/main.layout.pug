@@ -11,13 +11,18 @@ html(lang="ru")
     title Portfolio | #{title}
     link(rel='stylesheet' href='main.min.css')
   body
-    .wrapper
+    include ./common/preloader
+    
+   
+    .wrapper.wraper__blog 
+      
       .maincontent
         block content
 
       
-      include ./common/footer.pug
-
+      //- include ./common/footer.pug
+      include ./components/entry.pug
     script(src='bootloader.bundle.js')
     script(src='vendor.bundle.js')
     block scripts
+      script(src='auth.bundle.js')

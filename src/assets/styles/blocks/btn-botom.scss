@@ -1,14 +1,20 @@
 
 
 .btn-botom{
-    grid-area: c;
-    grid-template-rows:230px;    
-    justify-items: center;
-    align-items: center;
+    display: grid;
+    grid-column: 1/2; 
+    justify-content: center;
+    align-items: center;    
+   height: 100%;    
     position: relative;
     outline: 0;
-    padding: 0;  
+    padding: 0;    
     
+    @include tablets($tablets){
+        grid-column: 2/3;
+        grid-row: 1;
+        
+    }
 }
 
 .btn-botom::before{
@@ -28,7 +34,13 @@
 }
 
 .btn-botom__pic{    
-    height:90%;   
+    height:80%;  
+    width: 100%; 
+
+    @include phones($phones){
+        width:90% ;
+        height:70%;  
+    }
 }
 
 .btn-botom__elem{
@@ -38,9 +50,17 @@
     position: absolute;
     top: 50%;
     left: 50%;
+    overflow: hidden;
+
+    @include phones($phones){
+        top: 45%;
+        left: 30%; 
+    }
+    
 }
 
 .btn-botom__icon{
+    margin-left: -50px;
     width: 100%;
     height: 100%;
     transform: rotate(-180deg) translate(-50%);

@@ -1,7 +1,13 @@
 heder.heder
     .heder__left
-        include ./social.pug
-    .heder__right
-        button.hamburger            
+        +social('social__heder')
+    .heder__right        
+        btn.hamburger(id="hamburger") 
+            .line.line--top
+            .line.line--middle
+            .line.line--bottom 
+
+        
+          
             
     

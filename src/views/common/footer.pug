@@ -1,2 +1,20 @@
 footer.footer
-  h2 Copyright &copy;
+  .footer__left
+    p.footer__text Этот сайт я сделала в рамках обучения в школе #[br] онлайн образования Loftschool
+  .footer__centr
+    nav.footer__nav
+      ul.footer__list
+        li.footer__item 
+          a.footer__elem(href='http://localhost:3000/my-works.html') Мои работы
+        li.footer__item 
+          a.footer__elem(href='#') Обо мне
+        li.footer__item 
+          a.footer__elem(href='#') Блог
+        li.footer__item 
+          a.footer__elem(href='#') Авторизация
+    +social('social__footer')
+  .footer__right
+    p.footer__quote Всегда пишите код так, будто сопровождать его будет склонный к #[br] насилию психопат, который знает, где вы живете.
+    p.footer__label — Martin Golding
++copyrigt('copyrigt__footer')
+  

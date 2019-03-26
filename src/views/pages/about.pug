@@ -4,9 +4,12 @@ block variables
   - var title = 'Обо мне'
 
 block scripts
-  script(src='about.bundle.js')
-
+  script(src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript")
+  script(src='about.bundle.js')  
 block content
-  h1 Страничка "Обо Мне" 
-  
-   
+  .wrapper 
+    main.about
+      +present('present--about')
+      include ../common/about-content.pug
+      include ../common/map.pug 
+      include ../common/footer.pug   

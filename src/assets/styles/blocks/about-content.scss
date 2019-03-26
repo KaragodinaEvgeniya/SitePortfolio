@@ -1,0 +1,56 @@
+.about-content   {
+    display: flex;   
+    justify-content: center;
+    width: 100vw;
+    
+    @include tablets($tablets){
+        flex-flow: column;
+    }
+   
+}
+
+.about-content__text{
+    display: flex;    
+    text-align: start;
+    width: 50%;
+
+    @include desktop($desktop){
+        width: 100%;
+        
+    }
+}
+
+.about-content__user{
+    display: flex;    
+    width: 50%; 
+    background: #ebefe2; 
+    
+    @include desktop($desktop){
+        flex-flow: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    @include tablets($tablets){
+        width: 100%;
+    }
+}
+
+.about-content__skill{
+    display: flex; 
+    flex-flow: column;   
+    width: 50%;   
+    align-items: center;
+    padding-left: 35px;
+    padding-right: 35px;
+    background: #f8f9f5;
+    
+    @include tablets($tablets){
+        width: 100%;
+        margin-top: 30px;
+       
+    }
+
+    
+
+}

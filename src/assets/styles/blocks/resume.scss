@@ -1,0 +1,42 @@
+.resume{
+    display: flex;
+    flex-flow: column;    
+    width: 50%;
+    padding-top: 20px;
+
+    @include desktop($desktop){
+        width: 70%;
+        justify-content: center;
+        align-items: center;
+    }
+
+    @include tablets($tablets){
+        width: 60%;
+        
+    }
+
+    @include phones($phones){
+        width: 90%;
+        
+    }
+}
+
+.resume__avatar{
+    display: flex;
+    width: 95%;
+    height: 394px;
+    margin-bottom: 45px;
+    overflow: hidden;
+}
+
+.resume__elem{
+    width: 100%;
+    height: 100%;
+}
+
+.resume__description{    
+    display: flex;
+    flex-flow: column;
+    width: 95%;
+    padding-bottom: 30px;
+}

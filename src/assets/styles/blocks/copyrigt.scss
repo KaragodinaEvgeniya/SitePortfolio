@@ -1,5 +1,7 @@
 .welcome__copyright{
     display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100%;
     height: 10%;
 }
@@ -8,6 +10,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 35px;
+    width: 100%;
+
+    @include phones($phones){
+        height: 80px;
+    }
 }
 
 .copyrigt__list{
@@ -15,22 +23,53 @@
     align-items: center;
     justify-content: center;
     height: 100%;
+
+   
+    @include phones($phones){
+        flex-flow: column;
+    }
+    
     
 }
 
 .copyrigt__item{
     display: flex;
     align-items: center;
-    justify-content: center;        
-    border-right: 1px solid #ffffff;
-
-    &:last-child{
-        border: none;          
-    }     
+    justify-content: center;  
+    
+    @include phones($phones){
+        margin-bottom: 15px;
+    }
+    
 }
+
+
 
 .copyrigt__elem{
     padding-right: 5px;
     padding-left: 5px;
-    @include roboto-regular    
+    @include roboto-regular;   
+    border-right: 1px solid #ffffff;
+
+    
+    &:first-child{
+        @include phones($phones){            
+            border: none;              
+            }
+        } 
+}
+
+.copyrigt__elem--border{
+    border: none;
+}
+
+.copyrigt__footer{
+    background: $green;
+    opacity: 0.9;
+
+    @include phones($phones){
+        
+        width: 115%;  
+        
+    }
 }

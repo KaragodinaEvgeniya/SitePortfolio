@@ -5,4 +5,55 @@ mixin icon(iconName, iconClass)
 mixin image(imagePath, imageAlt, imageClass)
   img(src=`/assets/images/${imagePath}`, alt=`${imageAlt}`, class=`${imageClass}`)
 
+mixin social(modified)
+
+  - modified = modified || ''
+
+  .social(class=`${modified}`)
+    ul.social__list       
+      li.social__item                      
+          +icon('vk','social__vk')
+      li.social__item
+          +icon('github','social__githab')           
+      li.social__item
+          +icon('in','social__in')
+
+mixin copyrigt(modified)
+
+  - modified = modified || ''
+
+  .copyrigt(class=`${modified}`)
+    ul.copyrigt__list
+      li.copyrigt__item
+        p.copyrigt__elem © Карагодина Евгения
+      li.copyrigt__item
+        p.copyrigt__elem создано с любовью в Loftschool
+        p.copyrigt__elem.copyrigt__elem--border 2018
+      
+
+mixin present(modified)
+
+  - modified = modified || ''
+
+  section.present(class=`${modified}`)
+    include ./heder.pug 
+    .present__user
+      .inscription
+        include ./user.pug 
+    .present__scroll 
+      button.scroll
+    nav.drawer(id="drawer")
+      ul.drawer__list
+        li.drawer__item.drawer__item--first
+        li.drawer__item.drawer__item--second
+          a.drawer__elem(href='http://localhost:3000/my-works.html') мои работы
+        li.drawer__item.drawer__item--third
+          a.drawer__elem(href='http://localhost:3000/about.html') обо мне
+        li.drawer__item.drawer__item--fourth
+          a.drawer__elem(href='http://localhost:3000/blog.html') блог
+        li.drawer__item.drawer__item--fifth
+          a.drawer__elem(href='http://localhost:3000') авторизация
+        li.drawer__item.drawer__item--sixth
+    
+
 

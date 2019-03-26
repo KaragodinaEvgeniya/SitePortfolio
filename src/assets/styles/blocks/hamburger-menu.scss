@@ -1,10 +1,64 @@
-.hamburger{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 40px;
-    height: 40px;
-    background:svg-load('hamburger.svg', fill=#ffff) center center no-repeat;   
+$white: #fff;
+.hamburger {
+ 
+  display: flex;
+  flex-flow: column;
+  align-items: flex-start;
+  justify-content: flex-start; 
+  width: 45px;
+  height: 45px;
+  right: 50px;
+  top: 30px;
+  cursor: pointer;
+  transition: .5s ease-in-out;
+  transform: translate3d(0, 0, 0);
+  z-index: 200;
+
+  &.active{
+    .line--top {
+      opacity: 0;
+      top: 20px;
+      width: 0px;
+      transform: rotate(225deg);
+    }
+    .line--middle {
+     
+     top: 12px;
+      transform: rotate(-315deg);
+      width: 35px;
+    }
+    .line--bottom  {
+     top: 12px;
+      transform: rotate(315deg);
+      width: 35px;
+    }  
+       
+  }  
+}
+.line{  
+  display: flex;
+  position: absolute;
+  width: 100%;
+      
+      border-radius: 3px;
+      width: 45px;
+      height: 8px;
+    top:15px;
+    background: $white;
+    left: 15px;
+    transition: all .5s;
     
+}
+
+.line--top {
+  top: 0px;
+ 
+}
+.line--middle {
+  top: 12px;
+  
+}
+.line--bottom {
+  top: 24px;
 }
 
